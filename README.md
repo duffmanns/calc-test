@@ -13,18 +13,32 @@ Anyone who adds bugs to the test should document them here.
 # Answer Key
 
 
-Divide by 0 returns ‘1’ (line 113)
+Divide by 0 returns ‘1’
+
 Changed displayable digits from 9 to 7
+
 Number format switches to exponent at 10 million instead of a billion
-2 different shades of orange (css line 129)
-You can input just a bunch of 0s now 
-You can put in multiple decimal points (it ignores anything after the 2nd decimal (line 34)
-Extra left padding on the ‘0’ button (move further)
+
+2 different shades of orange
+
+You can input just a bunch of 0s now
+
+You can put in multiple decimal points (it ignores anything after the 2nd decimal)
+
+Extra left padding on the ‘0’ button
+
 Font changed from 10pt to 12pt
+
 Number display alignment is slightly different 
-The ‘8’ is a ‘9’ now (line 52)
+
+The ‘8’ is a ‘9’ now
+
 0 divided by negative number used to show 'error'. Now It’s NaN
+
 A number smaller than -1000 returns ‘Y so negative?’
+
 Cursor switches to pointer for +,=,-,*,/,and 0
+
 When making a negative number, the ‘-‘ doesn’t immediately show up
+
 There’s a delay returning numbers > 9999
