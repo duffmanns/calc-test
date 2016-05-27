@@ -42,3 +42,20 @@ Cursor switches to pointer for +,=,-,*,/,and 0
 When making a negative number, the ‘-‘ doesn’t immediately show up
 
 There’s a delay returning numbers > 9999
+
+No more leading 0 upon initial click of "."
+
+Pressing clear updates display with nothing when it should have "0"
+
+There are trailing 0's after certain computations
+
+Clearing does not reset chosen operation when it should
+
+Consecutive operations do not work if you press equal 
+-//start().press(6).press('*').press(2).press('='); 
+-//should.equal('12');
+-//press.(+).press(8).press('=');
+-//should.equal('20'); however, does not equal 20 unless "+" is hit instead of "="
+
+Multiple consecutive clicks of the "clear" button does something 
+-Kyle is helping me implement this.

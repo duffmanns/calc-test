@@ -27,17 +27,17 @@ var Calculator = {
   },
 
   appendDigit: function appendDigit(value) {
-    if (this.inputDigits + 1 > this.significantDigits) {
+    if (this.inputDigits + 1 > this.significantDigits) {  //allows multiple 0's 
       return;
     }
     if (value === '.') {
       /*if (this.decimalMark) {
-        return;
+        return;                   //allows multiple "."
       } else {*/
         this.decimalMark = true;
       //}
       if (!this.currentInput) {
-        this.currentInput += '0';
+        this.currentInput += '';  //removes the 0 in front of "." 
       }
     } else {
       if (this.currentInput === '0' && value !== '0') { //blanks out the display if entering first digit
@@ -89,7 +89,7 @@ var Calculator = {
   backSpace: function backSpace() {
     this.currentInput = '';
     this.operationToBeApplied = '';
-    this.result = 0;
+    this.result = '';                   //When clear button is pressed, nothing displays when it should display a 0. 
     this.inputDigits = 0;
     this.decimalMark = false;
     this.updateDisplay();
@@ -111,14 +111,14 @@ var Calculator = {
         tempResult = result * currentInput;
         break;
       case '/':
-        if (currentInput == 0) {
+        if (currentInput == 0) {             //divide by 0 = 1 instead of error
             tempResult = 1;
         } else {
             tempResult = result / currentInput;
         }
         break;
     }
-    this.result = parseFloat(tempResult.toPrecision(this.significantDigits));
+    this.result = tempResult.toPrecision(4); //causes trailing 0 after smaller computations
     if (tempResult >  this.maxDisplayableValue ||
         tempResult < -this.maxDisplayableValue) {
       this.result = this.result.toExponential();
@@ -197,7 +197,7 @@ var Calculator = {
             }
             break;
           case 'C':
-            this.removeCurrentOperationEle();
+            // this.removeCurrentOperationEle();    //clearing does not reset selected operation
             this.backSpace();
             break;
         }
